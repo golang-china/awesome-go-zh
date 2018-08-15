@@ -17,7 +17,7 @@
 
 ## 官方文档(所有第三方文档的灵感来源)
 
-1. 官网: http://golang.org/, http://golang.google.cn/
+1. 官网: https://golang.org/, https://golang.google.cn/
 1. 博客: https://blog.golang.org/
 1. 报告: https://talks.golang.org/
 1. 老巢: https://github.com/golang/
@@ -29,6 +29,22 @@
 - Russ Cox: https://twitter.com/_rsc, https://swtch.com/~rsc
 - Rob Pike: https://twitter.com/rob_pike
 - Dave Cheney: https://twitter.com/davecheney, https://dave.cheney.net
+
+----
+
+## 讨论组
+
+全球论坛(需要站在长城看):
+
+1. 官方讨论组: https://groups.google.com/forum/#!forum/golang-nuts
+1. Go中国讨论组: https://groups.google.com/forum/#!forum/golang-china
+
+国内论坛:
+
+1. https://gocn.vip/
+1. https://golangtc.com/
+1. https://studygolang.com/
+1. https://zhihu.com/topic/19625982/
 
 ----
 
