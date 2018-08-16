@@ -1,9 +1,10 @@
-# Go资源精选中文版（拒绝大杂烩）
+# Go资源精选中文版
 
-
-关注微信公众号 (Go语言高级编程/golang-china)
+关注微信公众号 (Go高级编程/golang-china)
 
 ![](weixin-golang-china.jpg)
+
+Go中国讨论组: https://groups.google.com/forum/#!forum/golang-china
 
 ----
 
@@ -41,6 +42,8 @@
 
 国内论坛:
 
+1. https://www.v2ex.com/go/go
+1. https://www.newsmth.net/bbsdoc.php?board=Golang
 1. https://gocn.vip/
 1. https://golangtc.com/
 1. https://studygolang.com/
@@ -50,9 +53,11 @@
 
 ## Go语言电子书
 
-TODO
+1. Go高级编程: https://github.com/chai2010/advanced-go-programming-book
+1. Go Web编程: https://github.com/astaxie/build-web-application-with-golang
+1. 官方收录图书: https://github.com/golang/go/wiki/Books
 
-## Go语言图书
+## Go语言出版图书
 
 - 第一本中文图书: [Go语言·云动力](http://www.ituring.com.cn/book/1040), fango, 2012
 - Go语言官方图书: [The Go Programming Language](https://gopl.io), D&K, 2016
@@ -89,6 +94,13 @@ TODO
 国外引进部分:
 
 1. [Cloud Native Go：构建基于Go和React的云原生Web应用与微服务(中文翻译)](http://product.china-pub.com/6170789): Kevin Hoffman, 2017, 69元
+
+----
+
+## 官方扩展库
+
+- Protobuf: https://github.com/golang/protobuf/
+- GRPC: https://github.com/grpc/grpc-go
 
 ----
 
