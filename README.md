@@ -97,10 +97,30 @@ Go中国讨论组: https://groups.google.com/forum/#!forum/golang-china
 
 ----
 
-## 官方扩展库
+## Go & Google 出品库
 
-- Protobuf: https://github.com/golang/protobuf/
-- GRPC: https://github.com/grpc/grpc-go
+*Go team:*
+
+- https://github.com/golang/protobuf/
+- https://github.com/golang/oauth2
+- https://github.com/golang/glog
+- https://github.com/golang/geo
+- https://github.com/golang/groupcache
+- https://github.com/golang/snappy
+- https://github.com/golang/freetype
+- https://github.com/rsc/goversion
+
+
+*Google team:*
+
+- https://github.com/googleapis/googleapis
+- https://github.com/google/btree
+- https://github.com/google/go-cloud
+- https://github.com/google/gops
+- https://github.com/google/gvisor
+- https://github.com/google/google-api-go-client
+- https://github.com/grpc/grpc-go
+
 
 ----
 
