@@ -8,6 +8,12 @@ Go中国讨论组: https://groups.google.com/forum/#!forum/golang-china
 
 ----
 
+## 其它awesome
+
+- https://github.com/avelino/awesome-go
+
+----
+
 ## 入门到精通
 
 1. Go指南: https://tour.golang.org, https://tour.go-zh.org/
@@ -122,10 +128,9 @@ Go中国讨论组: https://groups.google.com/forum/#!forum/golang-china
 - https://github.com/google/google-api-go-client
 - https://github.com/grpc/grpc-go
 
-
 ----
 
-## WebAeesmbly
+## WebAssembly
 
 **Go官方资料**
 
