@@ -127,9 +127,16 @@ Go中国讨论组: https://groups.google.com/forum/#!forum/golang-china
 
 ## WebAeesmbly
 
-- https://github.com/chai2010/awesome-wasm-zh
+**Go官方资料**
+
 - https://tip.golang.org/pkg/syscall/js
 - https://github.com/golang/go/tree/master/misc/wasm
+
+**wasm资料精选**
+
+- https://github.com/chai2010/awesome-wasm-zh
+- https://github.com/mbasso/awesome-wasm
+
 
 ## 其它
 
