@@ -1,6 +1,6 @@
 # Go资源精选中文版
 
-关注微信公众号 (Go高级编程/golang-china)
+关注微信公众号 (Go高级编程/golang-china) 或 QQ群:626476298
 
 ![](weixin-golang-china.jpg)
 
