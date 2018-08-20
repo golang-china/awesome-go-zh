@@ -104,6 +104,24 @@ Go中国讨论组: https://groups.google.com/forum/#!forum/golang-china
 
 ----
 
+## Go Modules
+
+**官方文档**
+
+- https://tip.golang.org/cmd/go/#hdr-Modules__module_versions__and_more
+- https://research.swtch.com/vgo
+- https://github.com/golang/go/wiki/vgo
+- https://github.com/golang/go/wiki/Modules
+
+
+**其它文档**
+
+- https://lingchao.xin/tags/vgo/
+- https://tonybai.com/2018/07/15/hello-go-module/
+- https://roberto.selbach.ca/intro-to-go-modules
+
+----
+
 ## Go & Google 出品库
 
 *Go team:*
