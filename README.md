@@ -104,6 +104,12 @@ Go中国讨论组: https://groups.google.com/forum/#!forum/golang-china
 
 ----
 
+## Go2
+
+- https://github.com/golang/go/wiki/Go2
+- https://github.com/golang/go/labels/Go2
+
+
 ## Go Modules
 
 **官方文档**
