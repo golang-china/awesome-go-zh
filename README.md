@@ -37,6 +37,14 @@ Go中国讨论组: https://groups.google.com/forum/#!forum/golang-china
 - Rob Pike: https://twitter.com/rob_pike
 - Dave Cheney: https://twitter.com/davecheney, https://dave.cheney.net
 
+Go2 草案:
+
+- https://blog.golang.org/go2draft
+- https://go.googlesource.com/proposal/+/master/design/go2draft.md
+- https://github.com/golang/proposal/blob/master/design/go2draft-generics-overview.md
+- https://github.com/golang/proposal/blob/master/design/go2draft-error-handling.md
+- [go2设计草案介绍](https://github.com/songtianyi/songtianyi.github.io/blob/master/mds/techniques/go2-design-draft-introduction.md)
+
 ----
 
 ## 讨论组
