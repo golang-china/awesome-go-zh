@@ -56,12 +56,11 @@ Go2 草案:
 
 国内论坛:
 
-1. https://www.v2ex.com/go/go
-1. https://www.newsmth.net/bbsdoc.php?board=Golang
 1. https://gocn.vip/
 1. https://golangtc.com/
 1. https://studygolang.com/
 1. https://zhihu.com/topic/19625982/
+1. https://www.newsmth.net/bbsdoc.php?board=Golang
 
 ----
 
