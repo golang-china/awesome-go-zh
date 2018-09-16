@@ -1,0 +1,528 @@
+# Copyright 2013 <chaishushan{AT}gmail.com>. All rights reserved.
+# Use of this source code is governed by a BSD-style
+# license that can be found in the LICENSE file.
+
+# 安装 Go语言扩展包的 present 工具
+# https://godoc.org/golang.org/x/tools/present
+
+# 命令行切换到当前目录, 运行 present 命令
+# 浏览器打开 http://127.0.0.1:3999
+
+# 对外提供服务, 关闭 play 功能(安全措施)
+# present -http=":3999" -play=false
+
+# -----------------------------------------------------------------------------
+
+Go语言并发编程
+Tags: go, golang, concurrency
+
+柴树杉(青云QingCloud·武汉)
+chaishushan@gmail.com
+https://github.com/chai2010
+
+# -----------------------------------------------------------------------------
+
+* 自我介绍(chai2010)
+
+- 著作：[[https://github.com/chai2010/advanced-go-programming-book][《Go语言高级编程》]]、[[https://github.com/chai2010/awesome-wasm-zh/blob/master/webassembly-primer.md][《WebAssembly标准入门》]]
+- 翻译：[[https://github.com/golang-china/gopl-zh][《Go语言圣经》]]
+- 贡献：[[https://github.com/golang/go/blob/master/CONTRIBUTORS][Go语言代码贡献者]] chaishushan
+- 主页：Github: [[https://github.com/chai2010][@chai2010]]，Twitter: [[https://twitter.com/chaishushan][@chaishushan]]
+
+个人签名:
+
+# 果戈里: 当歌曲和传说已经缄默的时候，建筑还在说话
+
+- 当歌曲和传说都已经哑巴的时候，只有代码还在说话! - by chai2010
+- Less is more!
+
+.image chai2010-golang-concurrency/frontpage.png
+
+* _
+
+.image chai2010-golang-concurrency/chai2010-books.png 480 960
+
+# -----------------------------------------------------------------------------
+* Go语言并发哲学
+# -----------------------------------------------------------------------------
+
+* Go语言并发哲学
+
+Do not communicate by sharing memory, instead, share memory by communicating!
+
+不要通过共享内存来通信, 而是通过通信来共享内存!
+
+不要逆行!
+
+
+# -----------------------------------------------------------------------------
+* 并发的演化历史
+# -----------------------------------------------------------------------------
+
+* 语言演化历史
+
+.image chai2010-golang-concurrency/go-history.png
+
+- [[http://en.wikipedia.org/wiki/B_(programming_language)][B]] - Ken Thompson, 1969
+- [[http://en.wikipedia.org/wiki/C_(programming_language)][C]] - Dennis Ritchie, 1972
+- [[http://en.wikipedia.org/wiki/Newsqueak][Newsqueak]] - Rob Pike, 1989, GUI
+- [[http://en.wikipedia.org/wiki/Alef_(programming_language)][Alef]] - Phil Winterbottom, 1993, *C-like*
+- [[http://en.wikipedia.org/wiki/Limbo_(programming_language)][Limbo]] - Sean Dorward, Phil Winterbottom, Rob Pike,1995
+- [[http://golang.org/][Go]] - 2009, *C-like*
+
+* 理论基础
+
+- [[http://coolshell.cn/articles/1351.html][管道]] - Malcolm Douglas McIlroy, 1964
+- [[http://en.wikipedia.org/wiki/Communicating_sequential_processes][CSP]] - C. A. R. Hoare, 1978
+
+相关历史:
+
+- [[https://swtch.com/~rsc/thread/][Bell Labs and CSP Threads]] - Russ Cox
+
+* Newsqueak素数筛(01) - Rob Pike, 1989
+
+.code chai2010-golang-concurrency/squint.newsqueak /^counter/,/^}/
+
+.code chai2010-golang-concurrency/squint.newsqueak /^filter/,/^}/
+
+.image chai2010-golang-concurrency/spaceglenda37.png 250 1000
+
+* Newsqueak素数筛(02) - Rob Pike, 1989
+
+.code chai2010-golang-concurrency/squint.newsqueak /sieve OMIT/,
+
+- begin 启动一个并发, 类似 go 关键字
+- become 返回值, 类似 return 关键字
+
+* Newsqueak素数筛(03) - 原理
+
+.image chai2010-golang-concurrency/prime-sieve.png 500 1000
+
+* Alef(01) - Phil Winterbottom, 1993
+
+.code chai2010-golang-concurrency/helloworld.alef
+
+- proc 启动一个进程
+- task 启动一个线程
+
+* Alef(02) - Phil Winterbottom, 1993
+
+.image chai2010-golang-concurrency/alef.png
+
+Alef 同时支持进程和线程, 是伪装成编程语言的操作系统!
+
+
+# -----------------------------------------------------------------------------
+* 你好, 并发!
+# -----------------------------------------------------------------------------
+
+* 并发很简单
+
+	// 普通版本
+	func main() {
+		println("你好, 并发!")
+	}
+
+	// 并发版本
+	func main() {
+		go println("你好, 并发!")
+	}
+
+- go 关键字调用函数
+
+
+* Go的并发好强大
+
+	func main() {
+		for {
+			go stackoverflow()
+		}
+	}
+
+	func stackoverflow() {
+		stackoverflow()
+	}
+
+- 每个 Goroutine *栈很小*, 切换代价很低, 可以海量并发
+- 每个 Goroutine *栈很大*, 没有逻辑限制, 可以无限递归
+- 横向和纵向都可以无限扩展(只受资源限制)
+
+* 并发中的小问题: 没事走两步~
+
+.play chai2010-golang-concurrency/hello.go /package main/,
+
+- go关键字启动一个Goroutine
+- 请分析程序的运行状态
+
+* Go并非浪得虚名 - time.Sleep 的救赎
+
+.play chai2010-golang-concurrency/hello-v2.go /package main/,/^}/
+
+- 请分析程序的运行状态
+- time.Sleep 的作用?
+
+
+* 撞大运编程模式
+
+.play chai2010-golang-concurrency/hello-v2-bug.go /package main/,
+
+- 很不幸, println 内部足足睡眠了 2 秒钟 !
+
+* WTF: Go语言并发真的是弱爆了(小问题并不容易解决)!
+
+.play chai2010-golang-concurrency/hello-v3.go /func main/,
+
+- 更不幸的情况, 直接霸道地不返回了
+- 即使 time.Sleep 一万年也没辙
+
+
+* 并发小问题分析
+
+前面代码运行有一定的随机性, 无法保证并发程序的正确运行.
+
+并发的几个原则:
+
+- go启动Goroutine时无法保证新线程马上运行
+- main退出时程序退出
+
+解决的思路:
+
+- 后台Goroutine完成之前main函数不能退出.
+
+* 暴力一点: 不要让main函数退出!
+
+.play chai2010-golang-concurrency/hello-v4.go /func main/,
+
+- 后台的打印工作可以保证完成(有问题吗?)
+- main 函数永远不会退出(没问题)
+
+
+* 存在问题: main函数居然独占了系统线程!
+
+.play chai2010-golang-concurrency/hello-v5.go /func main/,
+
+- `for {}` 死循环保证了main函数不会退出, 但是依然占用了 系统线程
+- 当只有一个系统线程资源时, main 将独占活跃的 系统线程, 其它线程被饿死
+- 活跃的 系统线程 是有限的资源
+
+* 独占系统线程的原因: Goroutine是协作式调度
+
+.play chai2010-golang-concurrency/hello-v5-02.go /func main/,
+
+- 只是在编译后的每个函数入口被插入一次调度(类似的还有栈管理的函数等)
+- runtime 无法强制剥夺纯计算型 Goroutine 的运行
+
+* 避免让不干活的main函数独占了系统线程
+
+.play chai2010-golang-concurrency/hello-v6.go /func main/,
+
+- `select {}` 保证了main函数不会退出, 不再独占 系统线程 资源
+- 即使只有一个系统线程资源时, 后台线程依然有机会执行
+
+* 虐待main函数的方法当然不止一种...
+
+.play chai2010-golang-concurrency/hello-v7.go /func main/,
+
+- `<-make(chan int)` 保证了main函数不会退出, 不再独占 系统线程 资源
+- 即使只有一个系统线程资源时, 后台线程依然有机会执行
+
+* 崩溃: 居然都不干活了 - 阻塞导致死锁异常
+
+.play chai2010-golang-concurrency/hello-v8.go /func main/,
+
+- main 因为阻塞导致永远不会退出
+- 没有其它可运行的goroutine导致异常
+- 操作系统中如果没有任何一个进程在运行会是什么样子?
+
+注意:
+
+- `for {}` 死循环并不会导致死锁异常
+
+
+* 有人干活, 有人偷懒
+
+.play chai2010-golang-concurrency/hello-v8-02.go /func main/,
+
+- 不干活和浪费资源都不可取
+- 要劳逸结合
+
+* 要做好Goroutine的善后工作
+
+.play chai2010-golang-concurrency/hello-v9.go /func main/,
+
+- main 函数阻塞, 直到 done 管道有数据
+- 当 done 管道有数据时, 后台 Goroutine 必然已经完成了打印工作
+- Goroutine 何时退出并不关心, 重点是工作已经完成了
+- 完美的并发!
+
+* 充分利用并发资源
+
+.play chai2010-golang-concurrency/hello-v10.go /func main/,
+
+- 充分利用了系统的并发资源
+- 输出顺序有一定的随机性
+- main退出时全部 *打印工作* 完成, 但 *无法保证Goroutine全部退出*
+
+* 充分利用sync标准库
+
+.play chai2010-golang-concurrency/hello-v11.go /func main/,
+
+- sync.WaitGroup 用于等待一组并发体完成
+
+* 小心闭包陷阱
+
+.play chai2010-golang-concurrency/hello-v12.go /func main/,
+
+.play chai2010-golang-concurrency/hello-v12-02.go /func main/,
+
+.play chai2010-golang-concurrency/hello-v12-03.go /func main/,
+
+
+# -----------------------------------------------------------------------------
+* 并发的内存模型
+# -----------------------------------------------------------------------------
+
+* 原子操作
+
+- 最小的且不可并行化 的操作
+- 保证共享资源的完整性, 避免出现完成一半的状态
+- sync/atomic 对数值类型/指针 等提供原子读写支持
+- sync.Mutex 也可以封装自己的原子操作
+
+*只有原子操作并不能保证写出正确的并发程序！*
+
+* 顺序一致性内存模型
+
+.code chai2010-golang-concurrency/mem-model-v1.go /package main/,
+
+- msg 和 done 哪个先完成赋值要看具体场景!
+- msg 和 done 是否能够完成赋值也要看具体场景!
+- msg 和 done 赋值的顺序和代码书写的顺序并不等价!
+
+*原子操作配合一致性内存模型就可以写出正确的并发程序！*
+
+
+* 同一个Goroutine内: 满足顺序一致性内存模型
+
+.play chai2010-golang-concurrency/mem-model-v2.go /var msg/,
+
+- 先设置 msg 字符串, 然后设置 done 标志
+- 那么, 如果 done 标志为 true, msg 必然已经完成初始化
+- 如果 msg 完成了初始化, 那么打印并退出程序
+- 单线程是 OK
+
+* 不同Goroutine之间: 不满足顺序一致性!
+
+.play chai2010-golang-concurrency/mem-model-v3.go /var msg/,
+
+- main线程可能无法看到后台线程对msg和done做的更新
+- msg 的修改不是原子操作, main可能看到被修改一半的数据
+- 多线程环境, 程序结果未知
+
+* 通过Channel对齐时间参考系
+
+.play chai2010-golang-concurrency/mem-model-v4.go /var msg/,
+
+- done管道的发送和接收会强制进行一次同步
+- 此刻, 后台线程内, 满足顺序一致性内存模型, 字符串完成初始化
+- 此刻, main线程通过同步, 分享到后台线程此刻的字符串状态
+- 然后, main打印出了初始化之后的字符串
+
+* 通过sync.Mutex对齐时间参考系
+
+.play chai2010-golang-concurrency/mem-model-v5.go /var msg/,
+
+- sync.Mutex也是设置时间参考(必须先 Lock, 再 Unlock)
+- done.Unlock() 和第二个 done.Lock() 会做一次同步
+- 但是, 代码可读性没有管道好
+
+* 带缓存的管道可控制并发数
+
+.play chai2010-golang-concurrency/mem-model-v6.go /func main/,
+
+- 并发程序不仅仅是要运行的更快
+- 关键是要并发程度可控!
+- 散步时不要跑的太快...
+
+* 初始化顺序
+
+.image chai2010-golang-concurrency/init.png
+
+- 进入 main 函数之前, 只有一个Goroutine运行
+- 进入 main 函数之后, 在 init 中启动的 Goroutine 可能会被执行
+
+
+* Goroutine特点
+
+- 由go关键字启动, 是一种轻量级的线程
+- 以一个很小的栈启动(可能是2KB/4KB), 可以启动很多
+- Goroutine栈的大小会根据需要动态地伸缩, 不用担心栈溢出
+- m个goroutine运行在n个操作系统线程上, n默认对应CPU核数
+- runtime.GOMAXPROCS用于控制当前运行运行正常非阻塞Goroutine的系统线程数目
+- 发生在用户态, 切换的代价要比系统线程低(切换时只需要保存必要的寄存器)
+- Goroutine采用的是半抢占式的协作调度(在函数入口处插入协作代码)
+- IO/sleep/runtime.Gosched 均会导致调度
+- Goroutine故意设计为没有ID
+
+*注意：Goroutine是一种资源，也有泄露的风险！*
+
+
+# -----------------------------------------------------------------------------
+* 常见的并发模式
+# -----------------------------------------------------------------------------
+
+* 素数筛(01) - 原理
+
+.image chai2010-golang-concurrency/prime-sieve.png 500 1000
+
+* 素数筛(02) - 自然数管道
+
+返回生成自然数序列的管道: 2, 3, 4, ...
+
+.code -edit chai2010-golang-concurrency/prime_sieve.go /^func GenerateNatural/,/^}/
+
+* 素数筛(03) - 素数筛管道
+
+管道过滤器: 删除能被素数整除的数
+
+.code -edit chai2010-golang-concurrency/prime_sieve.go /^func PrimeFilter/,/^}/
+
+* 素数筛(04) - 管道级联
+
+.play -edit chai2010-golang-concurrency/prime_sieve.go /^func main/,/^}/
+
+
+* 赢者为王
+
+.play -edit chai2010-golang-concurrency/fast-search.go /^func main/,/^}/
+
+- 启动多个冗余的Goroutine, 返回第一个结果
+- 虽然可能会有一定的CPU浪费, 但是以最快速度返回结果
+
+* 监控并发数(01)
+
+	type gate chan bool
+
+	func (g gate) enter() { g <- true }
+	func (g gate) leave() { <-g }
+
+	func (g gate) Len() int { return len(g) }
+	func (g gate) Cap() int { return cap(g) }
+
+	func (g gate) Idle() bool { return len(g) == 0 }
+	func (g gate) Busy() bool { return len(g) == cap(g) }
+
+	func (g gate) Fraction() float64 {
+		return float64(len(g)) / float64(cap(g))
+	}
+
+- gate 是带缓存的管道
+- 通过 enter/leave 来控制最大并发数目
+- 通过利用率来判断并发层度
+
+* 监控并发数(02)
+
+	type gatefs struct {
+		fs vfs.FileSystem
+		gate
+	}
+
+	func (fs gatefs) Lstat(p string) (os.FileInfo, error) {
+		fs.enter()
+		defer fs.leave()
+		return fs.fs.Lstat(p)
+	}
+
+- 每个函数通过 enter/leave 来控制并发数目
+
+* 监控并发数(03)
+
+	func New(fs vfs.FileSystem, gate chan bool) *gatefs {
+		p := &gatefs{fs, gate}
+		// 后台监控线程
+		go func() {
+			for {
+				switch {
+				case p.gate.Idle():
+					// 处理后台任务
+				case p.gate.Fraction() >= 0.7:
+					// 并发预警
+				default:
+					time.Sleep(time.Second)
+				}
+			}
+		}()
+		return p
+	}
+
+- 根据并发的层度和CPU的压力来调整资源分配
+- CPU空闲时, 可以执行一些低级别的任务
+- 达到一定并发比率时, 提供预警
+
+* context包(01)
+
+	func worker(ctx context.Context, wg *sync.WaitGroup) error {
+		defer wg.Done()
+
+		for {
+			select {
+			default:
+				fmt.Println("hello")
+			case <-ctx.Done():
+				return ctx.Err()
+			}
+		}
+	}
+
+- select 多路选择管道
+- 带 default 分支, 非阻塞
+- ctx.Done() 可实现超时和退出操作
+
+* context包(02)
+
+	func main() {
+		ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+
+		var wg sync.WaitGroup
+		for i := 0; i < 10; i++ {
+			wg.Add(1)
+			go worker(ctx, &wg)
+		}
+
+		time.Sleep(time.Second)
+		cancel()
+
+		wg.Wait()
+	}
+
+- ctx 有超时限制, 并且可主动退出
+
+* sync.Map (Go1.9)
+
+.play chai2010-golang-concurrency/sync-map.go /func main/,
+
+	func (m *Map) Load(key interface{}) (value interface{}, ok bool)
+	func (m *Map) LoadOrStore(key, value interface{}) (actual interface{}, loaded bool)
+
+
+* 海量请求的处理思路
+
+- 海量请求先存入一个带较大缓冲的管道中, 缓冲大小可能是数千或数万
+- 构建后台 Goroutine 池, 各自从同一个带缓存的管道取任务执行
+
+* 并发小结
+
+- 避免 main 提前退出导致其它 Goroutine 被全部杀死
+- Goroutine 执行长时间的运算不要永远霸占系统线程(协作式调度)
+- Goroutine 要保证在 *最快* 和 *最慢* 两个极端场景都是正常的
+- Goroutine 不要运行 *太快*, 也不要 *太慢*
+- 忘记多线程, 忘记锁, 使用管道来同步
+- 小心 Goroutine 泄露
+
+* _
+
+.image chai2010-golang-concurrency/weixin-qrcode.png 400 800
+
+# -----------------------------------------------------------------------------
+# END
+# -----------------------------------------------------------------------------
