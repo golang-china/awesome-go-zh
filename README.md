@@ -1,4 +1,4 @@
-# Go资源精选中文版
+# Go资源精选中文版(拒绝大杂烩)
 
 关注微信公众号 (Go高级编程/golang-china) 或 QQ群:626476298
 
@@ -7,6 +7,11 @@
 Go中国讨论组: https://groups.google.com/forum/#!forum/golang-china
 
 ----
+
+## 收录标准
+
+- 有深度或时效性的单篇或系列非转载的原创或翻译文章
+- Github上类似awesome系列的集合类或列表类项目必须：Go强相关的，至少1k个star
 
 ## 其它awesome
 
