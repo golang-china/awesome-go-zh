@@ -148,6 +148,8 @@ Go2 草案:
 - https://arslan.io/2018/08/26/using-go-modules-with-vendor-support-on-travis-ci/
 - https://tonybai.com/2018/07/15/hello-go-module/
 - https://colobu.com/2018/08/27/learn-go-module/
+- https://www.komu.engineer/blogs/go-modules-early-peek
+
 
 ----
 
