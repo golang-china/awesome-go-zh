@@ -186,14 +186,40 @@ Go2 草案:
 - https://github.com/mbasso/awesome-wasm
 
 
-## 其它
+----
 
-TODO
+## 云计算
+
+- https://github.com/google/go-cloud
+- [Portable Cloud Programming with Go Cloud](https://blog.golang.org/go-cloud), [中文](http://www.53it.net/show/1708.html)
+- https://cloud.google.com/appengine/docs/standard/go/
+- [Google Cloud Functions for Go](https://medium.com/google-cloud/google-cloud-functions-for-go-57e4af9b10da)
+
+
+-----
+
+## 数据库 & ORM
+
+**LevelDB**
+
+- https://github.com/dgraph-io/badger
+- https://github.com/syndtr/goleveldb
+
+**SQLite3**
+
+- https://github.com/mattn/go-sqlite3
+
+**ORM**
+
+- https://github.com/rsc/dbstore
+- https://github.com/go-gorp/gorp
+- https://github.com/jinzhu/gorm
+
+-----
+
+## 其他
 
 <!--
-grpc
-leveldb
-orm
 web framework
 message queue
 -->
