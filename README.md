@@ -144,6 +144,10 @@ Go2 草案:
 - https://lingchao.xin/tags/vgo/
 - https://tonybai.com/2018/07/15/hello-go-module/
 - https://roberto.selbach.ca/intro-to-go-modules
+- https://www.cnblogs.com/apocelipes/p/9609895.html
+- https://arslan.io/2018/08/26/using-go-modules-with-vendor-support-on-travis-ci/
+- https://tonybai.com/2018/07/15/hello-go-module/
+- https://colobu.com/2018/08/27/learn-go-module/
 
 ----
 
@@ -184,6 +188,7 @@ Go2 草案:
 
 - https://github.com/chai2010/awesome-wasm-zh
 - https://github.com/mbasso/awesome-wasm
+- https://gopry.rice.sh/
 
 
 ----
