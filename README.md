@@ -92,6 +92,8 @@ Go2 草案:
 
 中文原创部分:
 
+1. [Go语言核心编程](http://product.china-pub.com/8052655): 李文塔, 2018, 79元
+1. [Go语言编程入门与实战技巧](http://product.china-pub.com/8051880):  黄靖钧, 2018, 79元
 1. [Go语言从入门到进阶实战：视频教学版](http://product.china-pub.com/8014297): 徐波, 2018, 99元
 1. [Go 学习笔记](http://product.china-pub.com/4971695): 雨痕, 2016, 89元
 1. [Go并发编程实战](http://www.ptpress.com.cn/Book.aspx?id=39783): 郝林, 2015, 79元
