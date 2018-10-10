@@ -118,6 +118,7 @@ Go2 草案:
 
 中文原创部分:
 
+1. [自己动手实现Lua](https://github.com/zxh0/luago-book): 张秀宏, 2018, 89元
 1. [分布式对象存储 原理 架构及Go语言实现](http://product.china-pub.com/8016311): 胡世杰, 2018, 59元
 1. [自己动手写Java虚拟机](https://github.com/zxh0/jvmgo-book): 张秀宏, 2016, 69元
 
