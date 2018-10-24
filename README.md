@@ -104,7 +104,6 @@ Go2 草案:
 
 国外引进部分:
 
-1. [机器学习：Go语言实现](http://product.china-pub.com/8053220): [美] 丹尼尔·怀特纳克, 2018, 59元
 1. [Go语言入门经典(中文翻译)](https://www.epubit.com/book/detail/7239): [英]乔治 奥尔波, 2018, 59元
 1. [Go Web编程(中文翻译)](https://www.amazon.cn/dp/B078CN7XSS): 郑兆雄, 2017, 79元
 1. [Go程序设计语言(中文翻译)](http://product.china-pub.com/5576736): D&K, 2017, 79元
@@ -125,6 +124,7 @@ Go2 草案:
 
 国外引进部分:
 
+1. [机器学习：Go语言实现](http://product.china-pub.com/8053220): [美] 丹尼尔·怀特纳克, 2018, 59元
 1. [Cloud Native Go：构建基于Go和React的云原生Web应用与微服务(中文翻译)](http://product.china-pub.com/6170789): Kevin Hoffman, 2017, 69元
 
 ----
