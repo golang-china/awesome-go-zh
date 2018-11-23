@@ -12,6 +12,7 @@
 
 ## 报告列表
 
+1. [2018 - Go 语言将要走向何方？](giac2018) - 上海·GIAC全球互联网架构大会 2018/11/23
 1. [Go语言并发编程](https://talks.godoc.org/github.com/chai2010/awesome-go-zh/chai2010/chai2010-golang-concurrency.slide) - 武汉·光谷猫友会 2018/09/16
 1. [深入CGO编程](https://github.com/chai2010/gopherchina2018-cgo-talk) - GopherChina2018·上海 2018/04/15
 1. [Go集成C/C++代码](https://github.com/chai2010/gopherchina2018-cgo-talk/blob/master/chai2010-cgo-talk-sz-20110207.pdf) - 珠三角技术沙龙深圳(2011.02.27)
