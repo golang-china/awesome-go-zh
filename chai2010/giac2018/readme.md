@@ -3,6 +3,7 @@
 
 - 报告内容: [giac-2018-go-talk-chai2010.pdf](./giac-2018-go-talk-chai2010.pdf)
 - 报告简介: http://2018.thegiac.com/detail.php?id=13467
+- https://chai2010.cn/talks/
 
 ![](./01.jpg)
 
