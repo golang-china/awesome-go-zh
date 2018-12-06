@@ -1,5 +1,9 @@
 # Go资源精选中文版(拒绝大杂烩)
 
+*推广: [《WebAssembly标准入门》开始预售了，其中包含Go&WebAssembly内容，欢迎关注！](https://item.jd.com/12499372.html)*
+
+----
+
 关注微信公众号 (Go高级编程/golang-china) 或 QQ群:626476298
 
 ![](weixin-golang-china.jpg)
@@ -202,8 +206,8 @@ Go2 草案:
 
 **WebAssembly图书**
 
-1. [WebAssembly标准入门](https://github.com/chai2010/awesome-wasm-zh/blob/master/webassembly-primer.md) - 初步完稿, 待出版
-1. [C/C++面向wasm编程](https://github.com/3dgen/cppwasm-book) - 开源图书, 开发中
+1. [WebAssembly标准入门](https://www.epubit.com/book/detail/40619) - 人民邮电出版社, 49元
+1. [C/C++面向WebAssembly编程](https://github.com/3dgen/cppwasm-book) - 开源图书, 开发中
 1. [Learn WebAssembly](https://www.packtpub.com/web-development/learn-webassembly) - 英文
 1. [Programming WebAssembly with Rust](https://medium.com/@KevinHoffman/programming-webassembly-with-rust-the-book-7c4a890fcf97) - 英文, 开发中
 
