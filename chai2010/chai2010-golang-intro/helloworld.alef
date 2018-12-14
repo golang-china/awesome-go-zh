@@ -1,0 +1,19 @@
+#include <alef.h>
+
+void receive(chan(byte*) c) { // HL
+	byte *s;
+	s = <- c; // HL
+	print("%s\n", s);
+	terminate(nil); // HL
+}
+
+void main(void) {
+	chan(byte*) c; // HL
+	alloc c;
+	proc receive(c); // HL
+	task receive(c); // HL
+	c <- = "hello proc or task"; // HL
+	c <- = "hello proc or task"; // HL
+	print("done\n");
+	terminate(nil); // HL
+}

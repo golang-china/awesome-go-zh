@@ -1,0 +1,33 @@
+
+counter := prog(c:chan of int) { // HL
+	i:=2;
+	for(;;)
+		c <-= i++; // HL
+};
+
+filter := prog(prime:int, listen, send:chan of int) { // HL
+	i:int;
+	for(;;)
+		if((i = <-listen)%prime)
+			send <-= i; // HL
+};
+
+// sieve OMIT
+sieve := prog() of chan of int {
+	c := mk(chan of int); // HL
+	begin counter(c); // HL
+	prime := mk(chan of int);
+	begin prog(){ // HL
+		p:int;
+		newc:chan of int;
+		for(;;){
+			prime <-= p =<- c;
+			newc = mk();
+			begin filter(p, c, newc); // HL
+			c = newc;
+		}
+	}();
+	become prime; // HL
+};
+
+prime:=sieve();

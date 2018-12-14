@@ -1,0 +1,307 @@
+# Copyright 2018 <chaishushan{AT}gmail.com>. All rights reserved.
+# Use of this source code is governed by a BSD-style
+# license that can be found in the LICENSE file.
+
+# 安装 Go语言扩展包的 present 工具
+# https://godoc.org/golang.org/x/tools/present
+
+# 命令行切换到当前目录, 运行 present 命令
+# 浏览器打开 http://127.0.0.1:3999
+
+# 对外提供服务, 关闭 play 功能(安全措施)
+# present -http=":3999" -play=false
+
+# -----------------------------------------------------------------------------
+
+Go语言简介
+Tags: go, golang
+
+柴树杉(青云QingCloud·武汉)
+chaishushan@gmail.com
+https://github.com/chai2010
+
+# -----------------------------------------------------------------------------
+
+* 自我介绍(chai2010)
+
+- 主页：Github: [[https://github.com/chai2010/awesome-go-zh/tree/master/chai2010][@chai2010]]，Twitter: [[https://twitter.com/chaishushan][@chaishushan]]
+- 著作：[[https://github.com/chai2010/advanced-go-programming-book][《Go语言高级编程》]]、[[https://github.com/chai2010/awesome-wasm-zh/blob/master/webassembly-primer.md][《WebAssembly标准入门》]]
+- 贡献：[[https://github.com/golang/go/blob/master/CONTRIBUTORS][Go语言代码贡献者]] chaishushan
+
+个人签名:
+
+# 果戈里: 当歌曲和传说已经缄默的时候，建筑还在说话
+
+- 当歌曲和传说都已经哑巴的时候，只有代码还在说话! - by chai2010
+- Less is more!
+
+* _
+
+.image chai2010-golang-intro/images/chai2010-books.png 480 800
+
+# -----------------------------------------------------------------------------
+* 初识Go语言
+# -----------------------------------------------------------------------------
+
+* 你好, 世界!
+
+.play -edit chai2010-golang-intro/helloworld.go /package main/,
+
+- 支持中文?
+- 没有分号?
+
+.image chai2010-golang-intro/images/talks.png 200 264
+
+* 谁开发了Go?
+
+[[http://en.wikipedia.org/wiki/Robert_Griesemer][Robert Griesemer]], [[http://en.wikipedia.org/wiki/Ken_Thompson][Ken Thompson]], 和 [[http://en.wikipedia.org/wiki/Rob_Pike][Rob Pike]],
+2007年底开始.
+
+到2008年中期, 大部分设计完成, 已经开始实现(编译器和运行时).
+
+[[http://research.google.com/pubs/author37504.html][Ian Taylor]] 和 [[http://swtch.com/~rsc/][Russ Cox]] 在 2008年 加入.
+
+还有很多...
+
+* Go语言之父
+
+.image chai2010-golang-intro/images/go_father.png 550 1000
+
+* 为什么?
+
+更快!
+
+找回编程的乐趣!
+
+By [[http://en.wikipedia.org/wiki/Rob_Pike][Rob Pike]]
+
+
+* 这世界变化快...
+
+最近十年内没有诞生新的系统级语言!
+
+但是世界已经改变了太多:
+
+- 庞大的库和依赖关系链
+- 网络应用已经成为主导
+- 大规模的程序开发
+- 多核CPU的崛起
+
+目前的系统语言设计时并没有考虑这些因素.
+
+* Go语言的设计目标
+
+- 要有静态类型语言的运行效率
+- 还要动态语言那样的轻松编程
+- 绝对安全: 类型安全和内存安全
+- 完美的支持并发和通信
+- 高效的无延迟的垃圾收集
+- 快速的编译
+
+参考文章:
+
+- [[http://mikespook.com/2012/06/%E7%BF%BB%E8%AF%91%E5%B0%91%E6%98%AF%E6%8C%87%E6%95%B0%E7%BA%A7%E7%9A%84%E5%A4%9A/][少是指数级的多(Less is exponentially more) - Rob Pike]]
+- [[http://www.oschina.net/translate/go-at-google-language-design-in-the-service-of-software-engineering][Go在谷歌: 以软件工程为目的的语言设计]]
+
+
+# -----------------------------------------------------------------------------
+* 语言简介
+# -----------------------------------------------------------------------------
+
+* 基础
+
+.code chai2010-golang-intro/code_basic.go /^const/,
+
+* 程序结构(Echo)
+
+.code chai2010-golang-intro/code_simple.go /^package main/,
+
+* 常量
+
+.code chai2010-golang-intro/code_consts.go /^type/,
+
+* 变量和类型
+
+.code chai2010-golang-intro/code_var_and_type.go /^weekend/,
+
+* 方法
+
+.code chai2010-golang-intro/code_method.go /^type/,
+
+* 自定义类型的方法
+
+.play -edit chai2010-golang-intro/code_method_user_type.go /^package/,
+
+* 接口
+
+.code chai2010-golang-intro/code_interface.go /^type/,
+
+* 接口的特点
+
+先定义一个写接口:
+
+	type Writer interface {
+		Write(p []byte) (n int, err os.Error)
+	}
+
+对应任意包含了 `Write` 方法的类型( *隐式接口* ), 比如:
+文件, 管道, 网络, 缓存...
+
+`fmt.Fprintf` 就是将格式化的数据写到接口.
+
+类似地, `bufio.NewWriter` 输入 `io.Writer` ,
+返回一个带缓存的 `io.Writer` .
+
+* 接口的例子
+
+.play chai2010-golang-intro/code_interface_example.go
+
+* 管道(chan)
+
+.code chai2010-golang-intro/code_chan.go /^var/,
+
+管道(chan)是一个带类型/线程安全/阻塞的消息队列(也可以设置缓存).
+
+*管道(chan)不仅用于通信*, *还用于同步*!
+
+* Goroutine(Go程)
+
+.code chai2010-golang-intro/code_goroutine.go /^x/,
+
+* 素数筛(01)
+
+.image chai2010-golang-intro/images/prime-sieve.png 500 1000
+
+* 素数筛(02)
+
+返回生成自然数序列的管道: 2, 3, 4, ...
+
+.code -edit chai2010-golang-intro/code_prime_sieve.go /^func GenerateNatural/,/^}/
+
+管道过滤器: 删除能被素数整除的数
+
+.code -edit chai2010-golang-intro/code_prime_sieve.go /^func PrimeFilter/,/^}/
+
+* 素数筛(03)
+
+素数筛: 菊花链模型
+
+.play -edit chai2010-golang-intro/code_prime_sieve.go /^func main/,/^}/
+
+* 更多特性...
+
+- 包
+- 初始化
+- 反射
+- 动态类型
+- 嵌入
+- 迭代器
+- 单元测试
+- ...
+
+# -----------------------------------------------------------------------------
+* 语言演化历程
+# -----------------------------------------------------------------------------
+
+* 语言演化族谱
+
+.image chai2010-golang-intro/images/go-history.png
+
+- [[http://en.wikipedia.org/wiki/B_(programming_language)][B]] - Ken Thompson, 1969
+- [[http://en.wikipedia.org/wiki/C_(programming_language)][C]] - Dennis Ritchie, 1972
+- [[http://en.wikipedia.org/wiki/Newsqueak][Newsqueak]] - Rob Pike, 1989, GUI
+- [[http://en.wikipedia.org/wiki/Alef_(programming_language)][Alef]] - Phil Winterbottom, 1993, *C-like*
+- [[http://en.wikipedia.org/wiki/Limbo_(programming_language)][Limbo]] - Sean Dorward, Phil Winterbottom, Rob Pike,1995
+- [[http://golang.org/][Go]] - 2009, *C-like*
+
+* 语言演化族谱
+
+- [[http://coolshell.cn/articles/1351.html][管道]] - Malcolm Douglas McIlroy, 1964
+- [[http://en.wikipedia.org/wiki/Communicating_sequential_processes][CSP]] - C. A. R. Hoare, 1978
+- [[http://en.wikipedia.org/wiki/Occam_(programming_language)][occam]] - INMOS, 1983
+- [[http://en.wikipedia.org/wiki/Erlang_(programming_language)][Erlang]] - Ericsson, 1986
+
+* Go语言特性来源
+
+- 基础语法, 简约哲学: C语言
+- 并发模型: [[http://en.wikipedia.org/wiki/Communicating_sequential_processes][CSP]], [[http://en.wikipedia.org/wiki/Newsqueak][Newsqueak]], [[http://en.wikipedia.org/wiki/Alef_(programming_language)][Alef]]
+- 模块系统: [[http://en.wikipedia.org/wiki/Limbo_(programming_language)][Limbo]]
+- 面向对象: [[http://en.wikipedia.org/wiki/Robert_Griesemer][Robert Griesemer]]
+- ...
+
+* B语言 - Ken Thompson, 1972
+
+.code chai2010-golang-intro/helloworld.b
+
+* C语言 - Dennis Ritchie, 1974
+
+.code chai2010-golang-intro/helloworld.c
+
+.image chai2010-golang-intro/images/Ken_n_dennis.png 300 1000
+
+* Newsqueak素数筛(01) - Rob Pike, 1989
+
+.code chai2010-golang-intro/squint.newsqueak /^counter/,/^}/
+
+.code chai2010-golang-intro/squint.newsqueak /^filter/,/^}/
+
+.image chai2010-golang-intro/images/spaceglenda37.png 250 1000
+
+* Newsqueak素数筛(02) - Rob Pike, 1989
+
+.code chai2010-golang-intro/squint.newsqueak /sieve OMIT/,
+
+* Alef(01) - Phil Winterbottom, 1993
+
+.code chai2010-golang-intro/helloworld.alef
+
+* Alef(02) - Phil Winterbottom, 1993
+
+.image chai2010-golang-intro/images/alef.png
+
+* Limbo - Sean Dorward, Phil Winterbottom, Rob Pike, 1995
+
+.code chai2010-golang-intro/helloworld.limbo
+
+* Go语言诞生(hg log -r 0:4)
+
+.image chai2010-golang-intro/images/go-log04.png 500 950
+
+* Go Spec - 2008.03.02
+
+- 没有 '->', 用 '.' 代替
+- 元组赋值: (a, b) = (b, a);
+- struct可以添加方法
+- 数组是值
+- 没有指针运算
+- 是否需要类型switch?
+- 后缀(无前缀) ++ 和 -- 是语句, 不是表达式
+- 语言级的并发支持
+- 垃圾回收
+- 短小精悍, 少即是多(为什么?)
+- ...
+
+
+# -----------------------------------------------------------------------------
+* Go语言的未来
+# -----------------------------------------------------------------------------
+
+* Go1.11 - 2018.08
+
+- 模块化支持
+- WebAssembly
+
+* Go2 - 2020?
+
+- 错误处理
+- 泛型
+
+
+# -----------------------------------------------------------------------------
+
+* Q&A
+
+.image chai2010-golang-intro/images/bumper640x360.png 500 1000
+
+# -----------------------------------------------------------------------------
+# by chaishushan@gmail.com
