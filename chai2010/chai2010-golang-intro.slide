@@ -288,14 +288,31 @@ By [[http://en.wikipedia.org/wiki/Rob_Pike][Rob Pike]]
 
 * Go1.11 - 2018.08
 
-- 模块化支持
-- WebAssembly
+- 模块化支持 - 解决大型工程的管理(补缺陷)
+- WebAssembly - 打开一个巨大的新领域(新特性)
+
+[[https://github.com/golang/go/wiki/Modules][https://github.com/golang/go/wiki/Modules]]
+
+[[https://github.com/chai2010/awesome-go-zh][https://github.com/chai2010/awesome-go-zh]]
+
+* WebAssembly - Windows 2000
+
+.image chai2010-golang-intro/images/win2k.png
+
+* WebAssembly - 中文图书
+
+.image chai2010-golang-intro/images/wasm-books.png
 
 * Go2 - 2020?
 
 - 错误处理
 - 泛型
 
+[[https://github.com/golang/proposal/blob/master/design/go2draft.md][https://github.com/golang/proposal/blob/master/design/go2draft.md]]
+
+[[https://godoc.org/golang.org/x/exp/errors][https://godoc.org/golang.org/x/exp/errors]]
+
+[[https://github.com/chai2010/awesome-go-zh][https://github.com/chai2010/awesome-go-zh]]
 
 # -----------------------------------------------------------------------------
 
