@@ -4,7 +4,7 @@
 
 - https://github.com/golang/go/commits?author=benshi001
 
-## 柴树杉([chai2010](https://github.com/benshi001))
+## 柴树杉([chai2010](https://github.com/chai2010))
 
 - https://github.com/golang/image/commits?author=chai2010
 - https://github.com/golang/go/commits?author=chai2010
