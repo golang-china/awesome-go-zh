@@ -23,6 +23,11 @@ Go中国讨论组: https://groups.google.com/forum/#!forum/golang-china
 
 - https://github.com/avelino/awesome-go
 
+
+## 中国区Go语言贡献者
+
+- [go-contributors.md](go-contributors.md)
+
 ----
 
 ## 入门到精通
