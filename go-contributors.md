@@ -46,7 +46,31 @@
 
 - https://github.com/golang/go/commits?author=ctriple
 
+Dev Zhoujun <dev.zhoujun@gmail.com>
+
+Han-Wen Nienhuys <hanwen@google.com>
+Hang Qian <hangqian90@gmail.com>
+
+He Liu <liulonnie@gmail.com>
+
+Hong Ruiqi <hongruiqi@gmail.com>
+
+Hongfei Tan <feilengcui008@gmail.com>
+
+Hu Keping <hukeping@huawei.com>
+
+Jingcheng Zhang <diogin@gmail.com>
+Jingguo Yao <yaojingguo@gmail.com>
+Jiong Du <londevil@gmail.com>
+
+Jiulong Wang <jiulongw@gmail.com>
+
+Kun Li <likunarmstrong@gmail.com>
+
 Sakeven Jiang <jc5930@sina.cn>
+
+Wei Fu <fhfuwei@163.com>
+Wei Guangjing <vcc.163@gmail.com>
 
 Yu Heng Zhang <annita.zhang@cn.ibm.com>
 Yu Xuan Zhang <zyxsh@cn.ibm.com>
