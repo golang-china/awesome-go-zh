@@ -11,6 +11,10 @@
 
 - https://github.com/golang/go/commits?author=oiooj
 
+## 蒙卓([mengzhuo](https://github.com/mengzhuo))
+
+- https://github.com/golang/go/commits?author=mengzhuo
+
 ## 史斌([benshi001](https://github.com/benshi001))
 
 - https://github.com/golang/go/commits?author=benshi001
