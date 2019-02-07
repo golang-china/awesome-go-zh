@@ -48,6 +48,15 @@ https://github.com/golang/go/blob/master/CONTRIBUTORS
 
 - https://github.com/golang/go/commits?author=ctriple
 
+
+cherry zhang  是google go core team的，
+
+fannie zhang, wei xiao , eric fang都是arm中国的
+
+----
+
+Cherry Zhang <cherryyz@google.com>
+
 Dev Zhoujun <dev.zhoujun@gmail.com>
 
 Han-Wen Nienhuys <hanwen@google.com>
