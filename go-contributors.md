@@ -2,6 +2,8 @@
 
 *注：根据拼音排序，排名不分先后！如果有遗漏请告知，谢谢。*
 
+https://github.com/golang/go/blob/master/CONTRIBUTORS
+
 ## 柴树杉([chai2010](https://github.com/chai2010))
 
 - https://github.com/golang/image/commits?author=chai2010
