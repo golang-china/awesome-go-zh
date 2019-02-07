@@ -19,6 +19,10 @@
 
 - https://github.com/golang/go/commits?author=mengzhuo
 
+## Minux([minux](https://github.com/minux))(Go官方团队成员)
+
+- https://github.com/golang/go/commits?author=minux
+
 ## OlingCat([OlingCat](https://github.com/OlingCat))
 
 - https://github.com/golang/go/commits?author=OlingCat
