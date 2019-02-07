@@ -11,9 +11,17 @@
 
 - https://github.com/golang/go/commits?author=oiooj
 
+## 樊虹剑([fango](https://github.com/fango))(新加坡)
+
+- https://github.com/golang/go/commits?author=fango
+
 ## 蒙卓([mengzhuo](https://github.com/mengzhuo))
 
 - https://github.com/golang/go/commits?author=mengzhuo
+
+## OlingCat([OlingCat](https://github.com/OlingCat))
+
+- https://github.com/golang/go/commits?author=OlingCat
 
 ## 史斌([benshi001](https://github.com/benshi001))
 
