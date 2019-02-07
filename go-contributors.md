@@ -35,3 +35,27 @@
 ## 徐祥曦([templexxx](https://github.com/templexxx))
 
 - https://github.com/golang/go/commits?author=templexxx
+
+<!--
+
+## Zhou Peng([ctriple](https://github.com/ctriple))
+
+- https://github.com/golang/go/commits?author=ctriple
+
+Sakeven Jiang <jc5930@sina.cn>
+
+Yu Heng Zhang <annita.zhang@cn.ibm.com>
+Yu Xuan Zhang <zyxsh@cn.ibm.com>
+
+Zheng Dayu <davidzheng23@gmail.com>
+Zheng Xu <zheng.xu@arm.com>
+Zhengyu He <hzy@google.com>
+Zhongpeng Lin <zplin@uber.com>
+Zhongtao Chen <chenzhongtao@126.com>
+Zhongwei Yao <zhongwei.yao@arm.com>
+Zhou Peng <p@ctriple.cn>
+
+张嵩 <zs349596@gmail.com>
+申习之 <bronze1man@gmail.com>
+
+-->
