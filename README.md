@@ -97,6 +97,11 @@ Go2 草案:
 1. Go Web编程: https://github.com/astaxie/build-web-application-with-golang
 1. 官方收录图书: https://github.com/golang/go/wiki/Books
 
+Go2图书：
+
+1. Go2编程指南: https://github.com/chai2010/go2-book
+
+
 ## Go语言出版图书
 
 - 第一本中文图书: [Go语言·云动力](http://www.ituring.com.cn/book/1040), fango, 2012
