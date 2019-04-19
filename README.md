@@ -4,7 +4,14 @@
 
 ----
 
-关注微信公众号 (Go高级编程/golang-china) 或 QQ群:626476298
+QQ群和微信公众号:
+
+- Go编程语言-主群-A: 102319854 (满), 国内第一个Go语言QQ群
+- Go编程语言-圣经-A: 531508541 (满)
+- Go编程语言-翻译: 368836416
+- Go编程语言-高级编程: 626476298
+
+关注微信公众号 (Go高级编程/golang-china)
 
 ![](weixin-golang-china.jpg)
 
@@ -109,6 +116,7 @@ Go2图书：
 
 中文原创部分:
 
+1. [Go程序员面试算法宝典](http://product.china-pub.com/8058587): 猿媛之家, 2019, 69
 1. [Go语言核心编程](http://product.china-pub.com/8052655): 李文塔, 2018, 79元
 1. [Go语言编程入门与实战技巧](http://product.china-pub.com/8051880):  黄靖钧, 2018, 79元
 1. [Go语言从入门到进阶实战：视频教学版](http://product.china-pub.com/8014297): 徐波, 2018, 99元
@@ -121,6 +129,8 @@ Go2图书：
 
 国外引进部分:
 
+
+1. [Go语言实战](http://product.china-pub.com/8057254): Matt Butcher, Matt Farina, 2019, 79
 1. [Go语言并发之道(中文翻译)](http://www.oreilly.com.cn/index.php?func=book&isbn=978-7-5198-2494-5): Katherine Cox-Buday, 2018, 58元
 1. [Go语言入门经典(中文翻译)](https://www.epubit.com/book/detail/7239): [英]乔治 奥尔波, 2018, 59元
 1. [Go Web编程(中文翻译)](https://www.amazon.cn/dp/B078CN7XSS): 郑兆雄, 2017, 79元
