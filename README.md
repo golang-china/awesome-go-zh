@@ -2,6 +2,8 @@
 
 *推广: [《WebAssembly标准入门》开始预售了，其中包含Go&WebAssembly内容，欢迎关注！](https://item.jd.com/12499372.html)*
 
+*推广: 欢迎关注 [光谷码农·每日新闻](https://guanggu-coder.cn/)*
+
 ----
 
 QQ群和微信公众号:
