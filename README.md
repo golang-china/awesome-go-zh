@@ -6,16 +6,14 @@
 
 ----
 
-QQ群和微信公众号:
+加入微信群
 
-- Go编程语言-主群-A: 102319854 (满), 国内第一个Go语言QQ群, 进群要回答验证问题
-- Go编程语言-主群-B: 626476298
-- Go编程语言-读书-A: 531508541 (满), 进群要回答验证问题
-- Go编程语言-读书-B: 368836416
+![](https://chai2010.cn/static-images/weixin-golang.jpg)
 
-关注微信公众号 (Go高级编程/golang-china)
+关注微信公众号(光谷码农/guanggu-coder)
 
-![](weixin-golang-china.jpg)
+![](https://chai2010.cn/advanced-go-programming-book/weixin-guanggu-coder-logo.png)
+
 
 Go中国讨论组: https://groups.google.com/forum/#!forum/golang-china
 
