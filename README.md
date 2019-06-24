@@ -122,6 +122,7 @@ Go2图书：
 
 中文原创部分:
 
+1. [Go语言高级编程](https://www.epubit.com/book/detail/40090): 柴树杉 & 曹春晖, 2019, 89
 1. [Go程序员面试算法宝典](http://product.china-pub.com/8058587): 猿媛之家, 2019, 69
 1. [Go语言核心编程](http://product.china-pub.com/8052655): 李文塔, 2018, 79元
 1. [Go语言编程入门与实战技巧](http://product.china-pub.com/8051880):  黄靖钧, 2018, 79元
