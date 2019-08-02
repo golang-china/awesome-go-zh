@@ -4,19 +4,11 @@
 
 *推广: [《WebAssembly标准入门》开始预售了，其中包含Go&WebAssembly内容，欢迎关注！](https://item.jd.com/12499372.html)*
 
-*推广: 欢迎关注 [光谷码农·每日新闻](https://guanggu-coder.cn/)*
-
 ----
 
-网易云课堂·光谷码农课堂
+加入QQ群：102319854，中国第一个Go语言QQ群
 
-https://study.163.com/provider/480000001914454/index.htm
-
-加入微信群
-
-![](https://chai2010.cn/static-images/weixin-golang.jpg)
-
-关注微信公众号(光谷码农/guanggu-coder)
+关注微信公众号(光谷码农/guanggu-coder)，底层菜单扫码可进群
 
 ![](https://chai2010.cn/advanced-go-programming-book/weixin-guanggu-coder-logo.png)
 
