@@ -1,0 +1,178 @@
+# Copyright 2019 <chaishushan{AT}gmail.com>. All rights reserved.
+
+# 安装 Go语言扩展包的 present 工具
+# https://godoc.org/golang.org/x/tools/present
+
+# 命令行切换到当前目录, 运行 present 命令
+# 浏览器打开 http://127.0.0.1:3999
+
+# 对外提供服务, 关闭 play 功能(安全措施)
+# present -http=":3999" -play=false
+
+# -----------------------------------------------------------------------------
+
+Go&WebAssembly简介
+Tags: go, golang, wasm, WebAssembly
+
+柴树杉(中国·武汉·光谷)
+chaishushan@gmail.com
+https://github.com/chai2010
+
+
+# -----------------------------------------------------------------------------
+
+* 自我介绍(chai2010)
+.background chai2010-golang-wasm/images/bgd.jpg 
+
+- 主页：Github: [[https://github.com/chai2010/awesome-go-zh/tree/master/chai2010][@chai2010]]，Twitter: [[https://twitter.com/chaishushan][@chaishushan]]
+- 著作：[[https://github.com/chai2010/advanced-go-programming-book][《Go语言高级编程》]]、[[https://github.com/chai2010/awesome-wasm-zh/blob/master/webassembly-primer.md][《WebAssembly标准入门》]]
+
+个人签名:
+
+# 果戈里: 当歌曲和传说已经缄默的时候，建筑还在说话
+
+- 当歌曲和传说都已经哑巴的时候，只有代码还在说话! - by chai2010
+- Less is more!
+
+* WebAssembly参考图书
+.background chai2010-golang-wasm/images/bgd.jpg 
+
+.image chai2010-golang-wasm/images/wasm-book.png 500 840
+
+# -----------------------------------------------------------------------------
+* 认识WebAssembly
+.background chai2010-golang-wasm/images/bgd.jpg 
+# -----------------------------------------------------------------------------
+
+* WebAssembly是Web汇编语言
+.background chai2010-golang-wasm/images/bgd.jpg 
+
+WebAssembly是⼀种新兴的⽹⻚虚拟机标准。
+
+它的设计⽬标包括：
+
+- ⾼可移植性
+- ⾼安全性
+- ⾼效率（包括载⼊效率和运⾏效率）
+- 尽可能⼩的程序体积
+
+.image chai2010-golang-wasm/images/logo.png 280 280
+
+* WASM最新动态
+
+.background chai2010-golang-wasm/images/bgd.jpg 
+
+- 2018.07 - WebAssembly 发布1.0规范
+- 2018.08 - Go1.11开始试验性地⽀持WebAssembly
+- 2018.08 - Windows2000 运⾏在浏览器中
+- 2018年底 - WebAssembly System Interface 项目启动(WASI)
+- 2019年底 - Go1.14 将支持WASI规范
+
+*Ending定律*
+
+Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.
+
+⼀切可被编译为WebAssembly的，终将被编译为WebAssembly。
+
+* 浏览器中的Windows2000
+.background chai2010-golang-wasm/images/bgd.jpg 
+
+.image chai2010-golang-wasm/images/win2k.jpg 500 800
+
+.caption [[https://bellard.org/jslinux/][https://bellard.org/jslinux/]]
+
+# -----------------------------------------------------------------------------
+* Go&WebAssembly
+.background chai2010-golang-wasm/images/bgd.jpg 
+# -----------------------------------------------------------------------------
+
+* Go: 你好，WebAssembly
+.background chai2010-golang-wasm/images/bgd.jpg 
+
+.code ./chai2010-golang-wasm/01-hello/hello.go
+
+	$ GOOS=js GOARCH=wasm go build -o hello.wasm
+	$ node $(shell go env GOROOT)/misc/wasm/wasm_exec.js hello.wasm 
+	你好，WebAssembly
+
+* Go调用JS函数
+.background chai2010-golang-wasm/images/bgd.jpg 
+
+.code ./chai2010-golang-wasm/02-go-call-js/main.go
+
+	$ GOOS=js GOARCH=wasm go build -o hello.wasm
+	$ node $(shell go env GOROOT)/misc/wasm/wasm_exec.js hello.wasm 
+
+* JS回调Go函数
+.background chai2010-golang-wasm/images/bgd.jpg 
+
+.code ./chai2010-golang-wasm/03-js-call-go/main.go
+
+	$ GOOS=js GOARCH=wasm go build -o hello.wasm
+	$ node $(shell go env GOROOT)/misc/wasm/wasm_exec.js hello.wasm 
+
+* 类型转换: Go到JS - 01
+.background chai2010-golang-wasm/images/bgd.jpg 
+
+.code ./chai2010-golang-wasm/04-go-value-to-js/main.go
+
+* 类型转换: Go到JS - 02 - ValueOf
+.background chai2010-golang-wasm/images/bgd.jpg 
+
+ValueOf函数：
+
+	func syscall/js.ValueOf(x interface{}) Value
+
+类型对应关系：
+
+	| Go                     | JavaScript             |
+	| ---------------------- | ---------------------- |
+	| js.Value               | [its value]            |
+	| js.Func                | function               |
+	| nil                    | null                   |
+	| bool                   | boolean                |
+	| integers and floats    | number                 |
+	| string                 | string                 |
+	| []interface{}          | new array              |
+	| map[string]interface{} | new object             |
+
+
+* 类型转换: JS到Go
+.background chai2010-golang-wasm/images/bgd.jpg 
+
+.code ./chai2010-golang-wasm/05-js-value-to-go/main.go
+
+
+# -----------------------------------------------------------------------------
+* 例子：浏览器中到NES
+.background chai2010-golang-wasm/images/bgd.jpg 
+# -----------------------------------------------------------------------------
+
+# TODO
+
+
+# -----------------------------------------------------------------------------
+* WebAssembly汇编语言
+.background chai2010-golang-wasm/images/bgd.jpg 
+# -----------------------------------------------------------------------------
+
+# TODO
+
+# -----------------------------------------------------------------------------
+* 例子：WASM虚拟机
+.background chai2010-golang-wasm/images/bgd.jpg 
+# -----------------------------------------------------------------------------
+
+# 构造一个wasi模块，运行
+# TODO
+
+
+# -----------------------------------------------------------------------------
+* 展望：轻量级的Docker
+.background chai2010-golang-wasm/images/bgd.jpg 
+# -----------------------------------------------------------------------------
+
+# TODO
+
+# -----------------------------------------------------------------------------
+# by chaishushan@gmail.com
