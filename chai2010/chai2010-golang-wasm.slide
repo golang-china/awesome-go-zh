@@ -144,12 +144,23 @@ ValueOf函数：
 
 
 # -----------------------------------------------------------------------------
-* 例子：浏览器中到NES
+* 例子：浏览器中的NES
 .background chai2010-golang-wasm/images/bgd.jpg 
 # -----------------------------------------------------------------------------
 
-# TODO
+* Go语言版本的NES模拟器
+.background chai2010-golang-wasm/images/bgd.jpg 
 
+.image chai2010-golang-wasm/images/nes-01.png 400 600
+
+.caption [[https://github.com/rbaron/awesomenes][https://github.com/rbaron/awesomenes]]
+
+* 移植到WebAssembly平台
+.background chai2010-golang-wasm/images/bgd.jpg 
+
+.image chai2010-golang-wasm/images/nes-02.png 400 600
+
+.caption [[https://github.com/rbaron/awesomenes][https://github.com/rbaron/awesomenes]]
 
 # -----------------------------------------------------------------------------
 * WebAssembly汇编语言
