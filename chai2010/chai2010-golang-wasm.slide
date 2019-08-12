@@ -284,8 +284,8 @@ Go1.13还不支持，Go1.14可能会支持
 .background chai2010-golang-wasm/images/bgd.jpg 
 # -----------------------------------------------------------------------------
 
-- https://github.com/go-interpreter/wagon
-- https://github.com/wasmerio/go-ext-wasm
+- [[https://github.com/go-interpreter/wagon][https://github.com/go-interpreter/wagon]]
+- [[https://github.com/wasmerio/go-ext-wasm][https://github.com/wasmerio/go-ext-wasm]]
 
 wagon 是纯Go语言实现
 
