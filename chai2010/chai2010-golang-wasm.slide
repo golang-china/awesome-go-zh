@@ -142,6 +142,16 @@ ValueOf函数：
 
 .code ./chai2010-golang-wasm/05-js-value-to-go/main.go
 
+* 类型转换: TypeArray
+.background chai2010-golang-wasm/images/bgd.jpg
+
+	func syscall/js.CopyBytesToGo(dst []byte, src Value) int
+	func syscall/js.CopyBytesToJS(dst Value, src []byte) int
+
+改进思路：
+
+1. 在全局构造一个[]byte对象，保持地址稳定。
+2. 将全局稳定的地址取出，然后JS基于wasm内存构造TypeArray
 
 # -----------------------------------------------------------------------------
 * 例子：浏览器中的NES
@@ -160,30 +170,149 @@ ValueOf函数：
 
 .image chai2010-golang-wasm/images/nes-02.png 400 600
 
-.caption [[https://github.com/rbaron/awesomenes][https://github.com/rbaron/awesomenes]]
+.caption [[https://chai2010.cn/awesome-go-zh/chai2010/chai2010-golang-wasm/gones-wasm/js/index.html][在线预览]]
+
+* 移植的核心工作 - 01
+.background chai2010-golang-wasm/images/bgd.jpg 
+
+	func (tv *TV) SetFrame(pixels []byte) {
+		tv.pixels = pixels
+		jsSetPixels("nes", tv.pixels, SCREEN_WIDTH, SCREEN_HEIGHT)
+	}
+	func (tv *TV) ShowPixels() {
+		jsSetPixels("nes", tv.pixels, SCREEN_WIDTH, SCREEN_HEIGHT)
+	}
+
+	func jsSetPixels(canvas_id string, pixel []byte, width, height int) {
+		// 更新js空间的pix缓存信息
+		js.Global().Set("nes_width", js.ValueOf(width))
+		js.Global().Set("nes_height", js.ValueOf(height))
+		js.Global().Call("eval", `nes_pix = new Uint8Array(4*nes_width*nes_height);`)
+
+		// 复制帧数据到JS空间
+		nes_pix := js.Global().Get("nes_pix")
+		js.CopyBytesToJS(nes_pix, pixbuf)
+
+		// 绑定到Canvas对象
+		jsSetPixels := js.Global().Get("jsSetPixels")
+		jsSetPixels.Invoke(canvas_id, nes_pix, width, height)
+	}
+
+* 移植的核心工作 - 02
+.background chai2010-golang-wasm/images/bgd.jpg 
+
+	function jsSetPixels(canvas_id, pixel, width, height){
+		let canvas = document.getElementById(canvas_id);
+		canvas.width = width;
+		canvas.height = height;
+
+		let ctx = canvas.getContext("2d");
+		let imgdata = new ImageData(new Uint8ClampedArray(pixel), width, height);
+		ctx.putImageData(imgdata, 0, 0);
+	}
+
+改进思路：是否可以将数据直接写入Canvas缓存？
 
 # -----------------------------------------------------------------------------
 * WebAssembly汇编语言
+.background chai2010-golang-wasm/images/bgd.jpg
+# -----------------------------------------------------------------------------
+
+* 手写WebAssembly汇编
+.background chai2010-golang-wasm/images/bgd.jpg
+
+.code ./chai2010-golang-wasm/06-wasm-add/add.wat
+
+- module 定义一个模块
+- func 定义一个 $add 函数
+- export 将 $add 函数导出为 add，对应 res.instance.exports.add
+- 函数参数和返回值：func add(a, b int32) int32
+
+* Node.js环境测试add模块
+.background chai2010-golang-wasm/images/bgd.jpg
+
+.code ./chai2010-golang-wasm/06-wasm-add/main.js
+
+- add模块只是导出了函数，没有main函数，是一个库
+- wasm模块是否可以独立运行？
+
+
+# -----------------------------------------------------------------------------
+* WebAssembly System Interface
 .background chai2010-golang-wasm/images/bgd.jpg 
 # -----------------------------------------------------------------------------
 
+* 手工构造一个WASI例子
+
+.code ./chai2010-golang-wasm/07-WASI-hello/hello.wat /module/,
+
+* 本地运行wasm文件
+
+	$ wat2wasm hello.wat
+	$ wasmer run hello.wasm
+	hello world
+
+wasmer工具：
+
+[[https://github.com/wasmerio/wasmer][https://github.com/wasmerio/wasmer]]
+
+# -----------------------------------------------------------------------------
+* WASI到底是什么？
+.background chai2010-golang-wasm/images/bgd.jpg 
+# -----------------------------------------------------------------------------
+
+WASI其实是一组函数（类似OS的系统调用列表）：
+
+	;; type iov struct { iov_base, iov_len int32 }
+	;; func fd_write(id *iov, iovs_len int32, nwritten *int32) (written int32)
+	(import "wasi_unstable" "fd_write" (func $fd_write (param i32 i32 i32 i32) (result i32)))
+
+WASI定义的函数列表：
+
+[[https://github.com/CraneStation/wasmtime/blob/master/docs/WASI-api.md][https://github.com/CraneStation/wasmtime/blob/master/docs/WASI-api.md]]
+
+Go语言支持WASI吗？
+
+Go1.13还不支持，Go1.14可能会支持
+
 # TODO
+# Go输出WASI的wasm
+# wasm打包为wapm
 
 # -----------------------------------------------------------------------------
 * 例子：WASM虚拟机
 .background chai2010-golang-wasm/images/bgd.jpg 
 # -----------------------------------------------------------------------------
 
-# 构造一个wasi模块，运行
-# TODO
+- https://github.com/go-interpreter/wagon
+- https://github.com/wasmerio/go-ext-wasm
 
+wagon 是纯Go语言实现
 
-# -----------------------------------------------------------------------------
-* 展望：轻量级的Docker
+go-ext-wasm是Rust实现，CGO导入
+
+* 例子：WASM虚拟机 - wagon
 .background chai2010-golang-wasm/images/bgd.jpg 
-# -----------------------------------------------------------------------------
 
-# TODO
+	import (
+		"github.com/go-interpreter/wagon/exec"
+		"github.com/go-interpreter/wagon/wasm"
+	)
+	func main() {
+		f, _ := os.Open("add.wasm")
+		m, _ := wasm.ReadModule(f, nil)
+		vm, _ := exec.NewVM(m)
+		// result = add(100, 20)
+		result, _ := vm.ExecCode(0, 100, 20)
+		fmt.Println(result)
+	}
+
+* WebAssembly带来的影响
+.background chai2010-golang-wasm/images/bgd.jpg 
+
+1. 借助WASM平台，Go语⾔可以开发Web应⽤
+2. Go内置WASM虚拟机，吸收其它语⾔的成果
+3. 轻量级的Docker
 
 # -----------------------------------------------------------------------------
 # by chaishushan@gmail.com
