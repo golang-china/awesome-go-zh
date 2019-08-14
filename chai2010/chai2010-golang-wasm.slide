@@ -245,10 +245,12 @@ ValueOf函数：
 # -----------------------------------------------------------------------------
 
 * 手工构造一个WASI例子
+.background chai2010-golang-wasm/images/bgd.jpg 
 
 .code ./chai2010-golang-wasm/07-wasi-hello/hello.wat /module/,
 
 * 本地运行wasm文件
+.background chai2010-golang-wasm/images/bgd.jpg 
 
 	$ wat2wasm hello.wat
 	$ wasmer run hello.wasm
