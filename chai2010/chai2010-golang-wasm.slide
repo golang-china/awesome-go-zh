@@ -76,8 +76,15 @@ Any application that can be compiled to WebAssembly, will be compiled to WebAsse
 
 ⼀切可被编译为WebAssembly的，终将被编译为WebAssembly。
 
+* 2019年美国最赚钱的编程语言
+.background chai2010-golang-wasm/images/bgd.jpg
+
+.image chai2010-golang-wasm/images/US-Highest-Paid-Programming-Languages-in-2019.png
+
+.caption [[https://learnworthy.net/highest-paid-programming-languages-in-2019/][https://learnworthy.net/highest-paid-programming-languages-in-2019/]]
+
 * 浏览器中的Windows2000
-.background chai2010-golang-wasm/images/bgd.jpg 
+.background chai2010-golang-wasm/images/bgd.jpg
 
 .image chai2010-golang-wasm/images/win2k.jpg 500 800
 
