@@ -115,7 +115,7 @@ Go2图书：
 - Go语言官方图书: [The Go Programming Language](https://gopl.io), D&K, 2016
 - Go语言进阶图书: [Go语言高级编程](https://book.douban.com/subject/34442131/): 柴树杉 & 曹春晖, 豆瓣9.1分
 
-(国内已出版)豆瓣7分以上图书([链接](https://book.douban.com/subject_search?search_text=go%E8%AF%AD%E8%A8%80)):
+豆瓣7分以上图书(国内已出版)([链接](https://book.douban.com/subject_search?search_text=go%E8%AF%AD%E8%A8%80)):
 
 1. [Go语言高级编程](https://book.douban.com/subject/34442131/): 柴树杉 & 曹春晖, 9.1分
 1. [Go程序设计语言](https://book.douban.com/subject/27044219/): D&K, 8.9分
@@ -126,22 +126,26 @@ Go2图书：
 1. [Go语言程序设计](https://book.douban.com/subject/24869910/): Mark Summerfield, 7.0分
 
 
-中文原创部分:
+中文 **原创** 部分（不含 **编著/主编** 类型）:
 
-1. [Go语言高级编程](https://www.epubit.com/book/detail/40090): 柴树杉 & 曹春晖, 2019, 89
-1. [Go程序员面试算法宝典](http://product.china-pub.com/8058587): 猿媛之家, 2019, 69
+1. [Go语言高级编程](https://book.douban.com/subject/34442131/): 柴树杉 & 曹春晖, 2019, 89元
 1. [Go语言核心编程](http://product.china-pub.com/8052655): 李文塔, 2018, 79元
-1. [Go语言编程入门与实战技巧](http://product.china-pub.com/8051880):  黄靖钧, 2018, 79元
-1. [Go语言从入门到进阶实战：视频教学版](http://product.china-pub.com/8014297): 徐波, 2018, 99元
-1. [Go 学习笔记](http://product.china-pub.com/4971695): 雨痕, 2016, 89元
-1. [Go并发编程实战](http://www.ptpress.com.cn/Book.aspx?id=39783): 郝林, 2015, 79元
-1. [Go语言程序设计](http://product.china-pub.com/4076269): 王鹏, 2014, 39元
+1. [Go学习笔记](http://product.china-pub.com/4971695): 雨痕, 2016, 89元
+1. [Go并发编程实战](https://book.douban.com/subject/27016236/): 郝林, 2015, 79元
 1. [Go Web 编程](http://product.china-pub.com/3767290): 谢孟军, 2013, 65元
 1. [Go语言编程](http://www.ituring.com.cn/book/967): 许式伟, 2012, 49元
 1. [Go语言·云动力](http://www.ituring.com.cn/book/1040): fango, 2012, 39元
 
-国外引进部分:
+中文 **编著/主编** 部分:
 
+1. [Go程序员面试算法宝典](http://product.china-pub.com/8058587): 猿媛之家（编著）, 2019, 69元
+1. [Go语言编程实战](http://product.china-pub.com/8062288): 强彦 & 王军红（主编）, 2019, 59元
+1. [GO语言公链开发实战](http://product.china-pub.com/8061295): 郑东旭 等（编著）, 2019, 89元
+1. [Go语言编程入门与实战技巧](http://product.china-pub.com/8051880):  黄靖钧（编著）, 2018, 79元
+1. [Go语言从入门到进阶实战：视频教学版](http://product.china-pub.com/8014297): 徐波（编著）, 2018, 99元
+1. [Go语言程序设计](http://product.china-pub.com/4076269): 王鹏（编著）, 2014, 39元
+
+国外引进部分:
 
 1. [Go语言实战](http://product.china-pub.com/8057254): Matt Butcher, Matt Farina, 2019, 79
 1. [Go语言并发之道(中文翻译)](http://www.oreilly.com.cn/index.php?func=book&isbn=978-7-5198-2494-5): Katherine Cox-Buday, 2018, 58元
