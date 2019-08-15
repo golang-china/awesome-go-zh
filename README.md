@@ -122,6 +122,7 @@ Go2图书：
 1. [Go 学习笔记](https://book.douban.com/subject/26832468/): 雨痕, 8.0分
 1. [Go语言实战](https://book.douban.com/subject/27015617/): WilliaKennedy, 7.7分
 1. [Go语言编程](https://book.douban.com/subject/11577300/): 许式伟, 7.1分
+1. [Go并发编程实战](https://book.douban.com/subject/27016236/): 郝林, 7.0分
 
 中文原创部分:
 
