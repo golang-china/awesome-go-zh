@@ -41,6 +41,8 @@ https://github.com/chai2010
 
 .image chai2010-golang-wasm/images/wasm-book.png 500 840
 
+.caption [[https://book.douban.com/subject/30396640/][https://book.douban.com/subject/30396640/]]
+
 # -----------------------------------------------------------------------------
 * 认识WebAssembly
 .background chai2010-golang-wasm/images/bgd.jpg 
