@@ -12,7 +12,7 @@
 
 ## 报告列表
 
-1. [Go&WebAssembly简介](https://talks.godoc.org/github.com/chai2010/awesome-go-zh/chai2010/chai2010-golang-wasm.slide) - Go·夜读 2019/08/15
+1. [Go&WebAssembly简介](https://talks.godoc.org/github.com/chai2010/awesome-go-zh/chai2010/chai2010-golang-wasm.slide) - [Go·夜读](https://github.com/developer-learning/reading-go/issues/445) 2019/08/15
 1. [Go语言简介](https://talks.godoc.org/github.com/chai2010/awesome-go-zh/chai2010/chai2010-golang-intro.slide) - 武汉·黄鹤会 2018/12/16
 1. [2018 - Go 语言将要走向何方？](giac2018) - 上海·GIAC全球互联网架构大会 2018/11/23
 1. [Go语言并发编程](https://talks.godoc.org/github.com/chai2010/awesome-go-zh/chai2010/chai2010-golang-concurrency.slide) - 武汉·光谷猫友会 2018/09/16
