@@ -79,7 +79,7 @@ Any application that can be compiled to WebAssembly, will be compiled to WebAsse
 * 2019年美国最赚钱的编程语言
 .background chai2010-golang-wasm/images/bgd.jpg
 
-.image chai2010-golang-wasm/images/US-Highest-Paid-Programming-Languages-in-2019.png
+.image chai2010-golang-wasm/images/US-Highest-Paid-Programming-Languages-in-2019.png 500 800
 
 .caption [[https://learnworthy.net/highest-paid-programming-languages-in-2019/][https://learnworthy.net/highest-paid-programming-languages-in-2019/]]
 
