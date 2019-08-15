@@ -115,7 +115,7 @@ Go2图书：
 - Go语言官方图书: [The Go Programming Language](https://gopl.io), D&K, 2016
 - Go语言进阶图书: [Go语言高级编程](https://book.douban.com/subject/34442131/): 柴树杉 & 曹春晖, 豆瓣9.1分
 
-豆瓣7分以上图书:
+豆瓣7分以上图书([链接](https://book.douban.com/subject_search?search_text=go%E8%AF%AD%E8%A8%80)):
 
 1. [Go语言高级编程](https://book.douban.com/subject/34442131/): 柴树杉 & 曹春晖, 9.1分
 1. [Go程序设计语言](https://book.douban.com/subject/27044219/): D&K, 8.9分
