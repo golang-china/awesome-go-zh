@@ -176,10 +176,17 @@ ValueOf函数：
 
 .caption [[https://github.com/rbaron/awesomenes][https://github.com/rbaron/awesomenes]]
 
-* 移植到WebAssembly平台
+* 移植到WebAssembly平台 - 01
 .background chai2010-golang-wasm/images/bgd.jpg 
 
 .image chai2010-golang-wasm/images/nes-02.png 400 600
+
+.caption [[https://chai2010.cn/awesome-go-zh/chai2010/chai2010-golang-wasm/gones-wasm/js/index.html][在线预览]]
+
+* 移植到WebAssembly平台 - 02
+.background chai2010-golang-wasm/images/bgd.jpg 
+
+.image chai2010-golang-wasm/images/go-wasm-SuperMarioBros.gif 400 600
 
 .caption [[https://chai2010.cn/awesome-go-zh/chai2010/chai2010-golang-wasm/gones-wasm/js/index.html][在线预览]]
 
