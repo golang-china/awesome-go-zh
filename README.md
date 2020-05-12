@@ -103,6 +103,7 @@ Go2 草案:
 1. 胡文Go.ogle: https://github.com/chai2010/gopherchina2018-cgo-talk/blob/master/go.ogle.pdf
 1. Go高级编程: https://github.com/chai2010/advanced-go-programming-book
 1. Go Web编程: https://github.com/astaxie/build-web-application-with-golang
+1. Go语法树入门: https://github.com/chai2010/go-ast-book
 1. 官方收录图书: https://github.com/golang/go/wiki/Books
 
 Go2图书：
