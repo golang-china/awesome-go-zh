@@ -1,10 +1,7 @@
 # Go资源精选中文版(拒绝大杂烩)
 
-*QQ群：102319854（中国最早的Go语言QQ群）*
-
-*推广: 欢迎关注 [网易云课堂·光谷码农课堂](https://study.163.com/provider/480000001914454/index.htm)*
-
-*推广: [《WebAssembly标准入门》开始预售了，其中包含Go&WebAssembly内容，欢迎关注！](https://item.jd.com/12499372.html)*
+- *Go语言QQ群: 102319854, 1055927514*
+- *光谷码农课堂: https://study.163.com/provider/480000001914454/index.htm*
 
 ----
 
