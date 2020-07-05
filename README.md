@@ -5,13 +5,6 @@
 
 ----
 
-加入QQ群：102319854，中国第一个Go语言QQ群
-
-关注微信公众号(光谷码农/guanggu-coder)，底层菜单扫码可进群
-
-![](https://chai2010.cn/advanced-go-programming-book/weixin-guanggu-coder-logo.png)
-
-
 Go中国讨论组: https://groups.google.com/forum/#!forum/golang-china
 
 开发者头条: https://toutiao.io/subjects/318517
