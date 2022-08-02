@@ -1,6 +1,7 @@
 # Go资源精选中文版
 
-- *Go语言QQ群: 102319854, 1055927514*
+- *KusonStack一站式可编程配置技术栈: https://github.com/KusionStack/kusion*
+- *凹语言™: https://github.com/wa-lang/wa*
 
 ----
 
