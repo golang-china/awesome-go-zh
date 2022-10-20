@@ -95,6 +95,7 @@ Go2 草案:
 1. Go高级编程: https://github.com/chai2010/advanced-go-programming-book
 1. Go Web编程: https://github.com/astaxie/build-web-application-with-golang
 1. Go语法树入门: https://github.com/chai2010/go-ast-book
+1. µGo语言实现: https://github.com/wa-lang/ugo-compiler-book
 1. 官方收录图书: https://github.com/golang/go/wiki/Books
 
 Go2图书：
@@ -106,18 +107,18 @@ Go2图书：
 
 - 第一本中文图书: [Go语言·云动力](http://www.ituring.com.cn/book/1040), fango, 2012
 - Go语言官方图书: [The Go Programming Language](https://gopl.io), D&K, 2016
-- Go语言进阶图书: [Go语言高级编程](https://book.douban.com/subject/34442131/): 柴树杉 & 曹春晖, 豆瓣9.1分
+- Go语言进阶图书: [Go语言高级编程](https://book.douban.com/subject/34442131/): 柴树杉 & 曹春晖
 
 豆瓣 **7分以上** 图书(国内已出版)([链接](https://book.douban.com/subject_search?search_text=go%E8%AF%AD%E8%A8%80)):
 
-1. [Go程序设计语言(英文版)](https://book.douban.com/subject/26859123/): D&K, 9.4分
-1. [Go语言高级编程](https://book.douban.com/subject/34442131/): 柴树杉 & 曹春晖, 9.1分
-1. [Go程序设计语言(中文版)](https://book.douban.com/subject/27044219/): D&K, 8.9分
-1. [Go学习笔记](https://book.douban.com/subject/26832468/): 雨痕, 8.0分
-1. [Go语言实战](https://book.douban.com/subject/27015617/): WilliaKennedy, 7.7分
-1. [Go语言编程](https://book.douban.com/subject/11577300/): 许式伟, 7.1分
-1. [Go并发编程实战](https://book.douban.com/subject/27016236/): 郝林, 7.0分
-1. [Go语言程序设计](https://book.douban.com/subject/24869910/): Mark Summerfield, 7.0分
+1. [Go程序设计语言(英文版)](https://book.douban.com/subject/26859123/): D&K
+1. [Go语言高级编程](https://book.douban.com/subject/34442131/): 柴树杉 & 曹春晖
+1. [Go程序设计语言(中文版)](https://book.douban.com/subject/27044219/): D&K
+1. [Go学习笔记](https://book.douban.com/subject/26832468/): 雨痕
+1. [Go语言实战](https://book.douban.com/subject/27015617/): WilliaKennedy
+1. [Go语言编程](https://book.douban.com/subject/11577300/): 许式伟
+1. [Go并发编程实战](https://book.douban.com/subject/27016236/): 郝林
+1. [Go语言程序设计](https://book.douban.com/subject/24869910/): Mark Summerfield
 
 
 中文 **原创** 部分（不含 **编著/主编** 类型）:
@@ -225,6 +226,15 @@ Go2图书：
 
 ----
 
+## 新编程语言
+
+- Go+ 语言, 许式伟
+  - https://github.com/goplus/gop
+- 凹语言, 柴树杉/丁尔男/史斌
+  - https://github.com/wa-lang/wa
+
+----
+
 ## WebAssembly
 
 **Go官方资料**
@@ -279,6 +289,13 @@ Go2图书：
 - https://github.com/rsc/dbstore
 - https://github.com/go-gorp/gorp
 - https://github.com/jinzhu/gorm
+
+-----
+
+## DevOps
+
+- KusionStack 可编程配置技术栈
+  - https://github.com/KusionStack/kusion
 
 -----
 
